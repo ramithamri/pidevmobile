@@ -16,6 +16,7 @@ import com.codename1.ui.util.Resources;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.table.TableLayout;
+import com.mycompany.myapp.MyApplication;
 
 /**
  *
@@ -26,7 +27,7 @@ public class MenuForm extends com.codename1.ui.Form {
             private Container mainContainer;
                 private Resources theme;
 
-
+private Button SalmaBtn,HamzaBtn,AymenBtn,RamyBtn,HelmiBtn;
             public MenuForm (){
  
                         mainContainer = new Container();
@@ -73,7 +74,51 @@ exitBtn = new Button("Exit");
                         Display.getInstance().exitApplication();
             }
         });
-        
+        AymenBtn = new Button ("aymen");
+        HamzaBtn = new Button ("hamza");
+        SalmaBtn = new Button ("salma");
+        RamyBtn = new Button ("ramy");
+        HelmiBtn = new Button ("helmi");
+        mainContainer.add(AymenBtn);
+        mainContainer.add(HamzaBtn);
+        mainContainer.add(SalmaBtn);
+        mainContainer.add(RamyBtn);
+        mainContainer.add(HelmiBtn);
+        SalmaBtn.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                MyApplication.gotoSalma();
+            }
+        });
+        AymenBtn.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                MyApplication.gotoAymen();
+            }
+        });
+        HamzaBtn.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                MyApplication.gotoHamza();
+            }
+        });
+        RamyBtn.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                MyApplication.gotoramy();
+            }
+        });
+        HelmiBtn.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                MyApplication.gotoHelmi();
+            }
+        });
         mainContainer.add(addBookBtn).add(listBooksBtn).add(exitBtn);
                 this.add(BorderLayout.NORTH, mainContainer);
 
